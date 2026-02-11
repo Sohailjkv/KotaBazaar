@@ -250,10 +250,36 @@ header {
 ====================== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  gap: 20px;
-  padding: 24px;
+  gap: 16px;
+  padding: 16px;
 }
+
+/* Default Mobile (small phones) */
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Medium phones (like Vivo V19 ~390px+) */
+@media (min-width: 380px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
 
 .card {
   background: var(--card-white);
