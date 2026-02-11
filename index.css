@@ -1,0 +1,340 @@
+/* =====================
+    COLOR PALETTE
+====================== */
+:root {
+  --primary-red: #E53935;
+  --whatsapp-green: #25D366;
+  --text-black: #1F1F1F;
+  --soft-white: #FAFAFA;
+  --accent-yellow: #FFC107;
+  --card-white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--soft-white);
+  color: var(--text-black);
+}
+
+/* =====================
+    HEADER
+====================== */
+header {
+  background: white;
+  padding: 12px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
+  
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img{
+  width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo span {
+  color: var(--primary-red);
+}
+
+.search {
+  position: relative;
+  width: 100%;
+}
+
+.search input {
+  width: 100%;
+  padding: 12px 16px 12px 48px; /* left padding for icon */
+  border-radius: 50px;
+  border: none;
+  background: #f1f3f6;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  align-items: center;
+  justify-self: center;
+  left: 18px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #777;
+  pointer-events: none; /* makes input clickable through icon */
+}
+
+.categories{
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px 14px;
+  overflow-x: auto;
+}
+
+.category{
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background:#f1f5f9;
+  color: #334155;
+  border-radius: 40px;
+  padding: 10px ;
+}
+
+.active{
+  background: var(--whatsapp-green);
+}
+
+
+
+/*.header-cta
+ {
+  background: var(--whatsapp-green);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+*/
+/* =====================
+    HERO
+====================== */
+/*
+.hero {
+  padding: 32px 24px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: #555;
+}*/
+/* =====================
+   PREMIUM HERO
+====================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: var(--soft-white);
+}
+
+/* 🔴 Soft Red Glow */
+.hero-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(229,57,53,0.25) 0%, rgba(229,57,53,0) 70%);
+  top: -100px;
+  right: -100px;
+  z-index: 0;
+}
+
+/* 🧵 Subtle Kota Doria Inspired Pattern */
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.location {
+  font-size: 14px;
+  color: var(--primary-red);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Illustration */
+.hero-illustration {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.illus-box {
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-yellow));
+  opacity: 0.15;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-illustration {
+    margin-top: 40px;
+  }
+}
+
+
+/* =====================
+    PRODUCT GRID
+====================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 24px;
+}
+
+.card {
+  background: var(--card-white);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 14px;
+  flex-grow: 1;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--accent-yellow);
+  color: #000;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.seller {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-red);
+}
+
+.card-footer {
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp-green);
+  color: white;
+}
+
+.btn-seller {
+  background: transparent;
+  border: 2px solid var(--primary-red);
+  color: var(--primary-red);
+}
+
+/* =====================
+    FOOTER
+====================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
