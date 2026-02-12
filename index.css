@@ -89,9 +89,12 @@ header {
 
 .categories{
   display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 10px;
   padding: 10px 12px 14px;
-  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
 }
 
 .category{
