@@ -27,7 +27,7 @@ body {
 ====================== */
 header {
   background: white;
-  padding: 12px 24px;
+  padding: 4px 12px;
 
   display: flex;
   flex-direction: column;
